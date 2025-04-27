@@ -1,0 +1,20 @@
+npm install -g yarn
+yarn --version
+
+installation de nouveau projet React avec npm :
+npx create-react-app mon-projet --template typescript
+
+installation de nouveau projet React avec yarn :
+yarn create react-app mon-projet --template typescript
+
+Basculé de npm à yarn
+rm -rf node_modules package-lock.json && yarn install
+
+Démarer l'application :
+npm start
+
+Récupération d'un projet sur un autre PC :
+git clone https://github.com/ton-utilisateur/ton-depot.git
+cd tuto_react
+npm install
+npm start

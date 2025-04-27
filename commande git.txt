@@ -1,0 +1,32 @@
+GitHub :
+git clone https://git.heroku.com/lecombatdesheros-dev.git
+git status
+git add .
+git commit -m "comentaire"
+git push origin main
+
+Heroku :
+heroku ps:scale web=0
+heroku ps:scale web=1
+git status
+git add .
+git commit -m "commentaire"
+git push heroku master
+git pull heroku master
+heroku logs --tail --app lecombatdesheros-dev
+
+Lier un dépot :
+git remote add origin https://github.com/TON_USER/TON_DEPOT.git
+git branch -M main
+
+créer une branche :
+git branch dev
+
+Se possitioné sur une branche :
+git checkout main
+
+Fusionné deux branche :
+git checkout main
+et enssuite
+git merge develop
+Cela mais develop dans main
