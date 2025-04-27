@@ -1,13 +1,10 @@
-type TweetProps = {
-    name: string;
-};
-export function Tweet(props: TweetProps){
+export function Tweet({name}:{name:string}){
     const onLike = () => {
-        console.log(props.name);
+        console.log(name);
     }
     return(
         <div className="tweet">
-            <div>{props.name}</div>
+            <div>{name}</div>
             <div><button onClick={() => onLike()}>12</button></div>
         </div>
     );
