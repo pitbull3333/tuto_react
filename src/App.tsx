@@ -1,22 +1,49 @@
 import { useState } from "react";
 import { Tweet } from "./Tweet";
+
+const default_tweet = [
+    {
+        id:0,
+        name:"Toto",
+        like:3,
+    },
+    {
+        id:1,
+        name:"Titi",
+        like:1,
+    },
+    {
+        id:2,
+        name:"Tata",
+        like:13,
+    },
+    {
+        id:3,
+        name:"Tutu",
+        like:8,
+    },
+]
 function App(){
-    const [username, setUsername] = useState("toto");
-    const addLetter = () => {
-        setUsername((prevUsername) => prevUsername + "a");
+    const [tweets,nom_fonction_facultatif] = useState(default_tweet);
+    const onDelete = (id: number) =>{
+        console.log(id);
     };
-    console.log(username);
-    return(
+    return (
         <div>
-            <div>{username}</div>
-            <div>
-                <button onClick={addLetter}>Ajoute une lettre</button>
-            </div>
             <div className="tweet_contenaire">
-                <Tweet name="Toto" like={3} />
-                <Tweet name="Titi" like={1} />
-                <Tweet name="Tata" like={11} />
-                <Tweet name="Tutu" like={8} />
+                {tweets.map((tweet) => {
+                    return (
+                        <Tweet
+                            key={tweet.id}
+                            id={tweet.id}
+                            name ={tweet.name}
+                            like={tweet.like}
+                            onDelete = {(id) => {
+                                onDelete(id);
+                            }}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

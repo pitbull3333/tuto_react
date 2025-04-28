@@ -2,17 +2,33 @@ body{
     margin:0;
     background-color:#F6FD8D;
   }
+button{
+    cursor:pointer;
+}
 .tweet_contenaire{
     display:flex;
-    /*flex-direction:column;*/
+    flex-direction:column;
     flex-wrap:wrap;
     gap:16px;
     margin:10px;
 }
 .tweet{
+    position:relative;
     width:fit-content;
+    height:fit-content;
     min-width:100px;
+    min-height:40px;
     border:2px solid black;
     padding:8px;
     background-color:#08eae7;
+}
+.div_like{
+    position:absolute;
+    left:2px;
+    bottom:2px;
+}
+.div_delete{
+    position:absolute;
+    top:2px;
+    right:2px;
 }
