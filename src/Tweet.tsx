@@ -1,4 +1,4 @@
-export function Tweet({name}:{name:string}){
+export function Tweet({name,like}:{name:string;like:number}){
     const onLike = () => {
         console.log(name);
     }

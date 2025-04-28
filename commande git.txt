@@ -15,6 +15,12 @@ git push heroku master
 git pull heroku master
 heroku logs --tail --app lecombatdesheros-dev
 
+Récupération d'un projet sur un autre PC :
+git clone https://github.com/ton-utilisateur/ton-depot.git
+cd tuto_react
+npm install
+npm start
+
 Lier un dépot :
 git remote add origin https://github.com/TON_USER/TON_DEPOT.git
 git branch -M main
