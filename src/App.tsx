@@ -1,9 +1,8 @@
-import { Tweet } from "./Tweet";
 import { useState } from "react";
+import { Tweet } from "./Tweet";
 function App(){
-    let [tweets, setTweets] = useState<string[]>([]);
-    let [username, setUsername] = useState("toto");
-    let addLetter = () => {
+    const [username, setUsername] = useState("toto");
+    const addLetter = () => {
         setUsername((prevUsername) => prevUsername + "a");
     };
     console.log(username);
