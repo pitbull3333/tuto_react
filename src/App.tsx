@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Tweet } from "./Tweet";
-
 const default_tweet = [
     {
         id:0,
@@ -31,26 +30,29 @@ function App(){
     const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        const name = formData.get("name");
-        const content = formData.get("content");
+        const name = formData.get("name")?.toString().trim() || "";
+        const content = formData.get("content")?.toString().trim() || "";
+        const maxId = tweets.reduce((max, t) => (t.id > max ? t.id : max), 0);
         const newTweet = {
-            id:tweets.length > 0 ? tweets[0].id + 1:0,
-            name,
-            content,
-            like:0,
-        }
-        console.log({newTweet});
-    }
+        id: maxId + 1,
+        name,
+        content,
+        like: 0,
+    };
+    //setTweets([newTweet, ...tweets]);
+    setTweets([...tweets,newTweet]);
+    event.currentTarget.reset();// Réinitialise le formulaire
+  };
     const [tweets,setTweets] = useState(default_tweet);
     const onDelete = (tweetId:number) =>{
         setTweets((curr) => curr.filter((tweet) => tweet.id !== tweetId));
     };
     return (
         <div>
-            <div className="tweet_form">
-                <form onSubmit={handleSubmit}>
-                    <input type="text" name="name" placeholder="name" />
-                    <input type="content" name="content" placeholder="name" />
+            <div className="div_tweet_form">
+                <form className="form_tweet_form" onSubmit={handleSubmit}>
+                    <input className="text_input" type="text" name="name" placeholder="name" />
+                    <input className="text_input" type="content" name="content" placeholder="name" />
                     <input type="submit" />
                 </form>
             </div>

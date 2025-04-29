@@ -5,10 +5,18 @@ body{
 button{
     cursor:pointer;
 }
-.tweet_form{
+.div_tweet_form{
+    position:relative;
+    margin-top:10px;
+    margin-left:10px;
+}
+.form_tweet_form{
     display:flex;
     flex-direction:column;
-    /*margin-bottom:10px;*/
+    max-width:100px;
+}
+.text_input{
+    margin-bottom:10px;
 }
 .tweet_contenaire{
     display:flex;
