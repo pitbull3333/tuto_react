@@ -5,33 +5,38 @@ const default_tweet = [
     {
         id:0,
         name:"Toto",
+        content:"Bonjour !",
         like:3,
     },
     {
         id:1,
         name:"Titi",
+        content:"Hello !",
         like:1,
     },
     {
         id:2,
         name:"Tata",
+        content:"Salut !",
         like:13,
     },
     {
         id:3,
         name:"Tutu",
+        content:"Coucou !",
         like:8,
     },
 ]
 function App(){
     const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const form = event.currentTarget;
         const formData = new FormData(event.currentTarget);
-        const name = formData.get("name") as string;
+        const name = formData.get("name");
+        const content = formData.get("content");
         const newTweet = {
             id:tweets.length > 0 ? tweets[0].id + 1:0,
             name,
+            content,
             like:0,
         }
         console.log({newTweet});
@@ -45,7 +50,7 @@ function App(){
             <div className="tweet_form">
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="name" />
-                    {/*<input type="content" name="content" placeholder="name" />*/}
+                    <input type="content" name="content" placeholder="name" />
                     <input type="submit" />
                 </form>
             </div>
@@ -55,7 +60,8 @@ function App(){
                         <Tweet
                             key={tweet.id}
                             id={tweet.id}
-                            name ={tweet.name}
+                            name={tweet.name}
+                            content={tweet.content}
                             like={tweet.like}
                             onDelete={onDelete}
                         />
