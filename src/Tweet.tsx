@@ -1,4 +1,10 @@
-export function Tweet({id,name,like,onDelete}:{id:number;name:string;like:number;onDelete: (id: number) => void}){
+type TweetProps = {
+    id:number;
+    name:string;
+    like:number;
+    onDelete: (id:number) => void;
+};
+    export function Tweet({id,name,like,onDelete}:TweetProps){
     const onLike = () => {
         console.log(name);
     }

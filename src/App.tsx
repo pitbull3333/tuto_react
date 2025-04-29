@@ -24,9 +24,9 @@ const default_tweet = [
     },
 ]
 function App(){
-    const [tweets,nom_fonction_facultatif] = useState(default_tweet);
-    const onDelete = (id: number) =>{
-        console.log(id);
+    const [tweets,setTweets] = useState(default_tweet);
+    const onDelete = (tweetId:number) =>{
+        setTweets((curr) => curr.filter((tweet) => tweet.id !== tweetId));
     };
     return (
         <div>
