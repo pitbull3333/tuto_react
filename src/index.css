@@ -5,6 +5,11 @@ body{
 button{
     cursor:pointer;
 }
+.tweet_form{
+    display:flex;
+    flex-direction:column;
+    /*margin-bottom:10px;*/
+}
 .tweet_contenaire{
     display:flex;
     flex-direction:column;
