@@ -3,12 +3,10 @@ type TweetProps = {
     name:string;
     content:string;
     like:number;
-    onDelete: (id:number) => void;
+    onDelete:(id:number) => void;
+    onLike:(id:number) => void;
 };
-    export function Tweet({id,name,content,like,onDelete}:TweetProps){
-    const onLike = () => {
-        console.log(name);
-    }
+    export function Tweet({id,name,content,like,onDelete,onLike}:TweetProps){
     //const onDelete = (id) => {
         //console.log("delete");
     //}
@@ -17,7 +15,7 @@ type TweetProps = {
             <div className="div_delete"><button onClick={() => onDelete(id)}>❌</button></div>
             <div>{name}</div>
             <div>{content}</div>
-            <div className="div_like"><button onClick={() => onLike()}>💖{like}</button></div>
+            <div className="div_like"><button onClick={() => onLike(id)}>💖{like}</button></div>
         </div>
     );
 }

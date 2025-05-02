@@ -47,12 +47,22 @@ function App(){
     const onDelete = (tweetId:number) =>{
         setTweets((curr) => curr.filter((tweet) => tweet.id !== tweetId));
     };
+    const onLike = (tweetId:number) => {
+        setTweets(curr => {
+            const copyTweet = [...curr];
+            const likedTweet = copyTweet.find((tweet) => tweet.id === tweetId);
+            if (likedTweet) {
+                likedTweet.like += 1;
+            }
+            return copyTweet;
+        });
+    }
     return (
         <div>
             <div className="div_tweet_form">
                 <form className="form_tweet_form" onSubmit={handleSubmit}>
                     <input className="text_input" type="text" name="name" placeholder="name" />
-                    <input className="text_input" type="content" name="content" placeholder="name" />
+                    <input className="text_input" type="content" name="content" placeholder="message" />
                     <input type="submit" />
                 </form>
             </div>
@@ -66,6 +76,7 @@ function App(){
                             content={tweet.content}
                             like={tweet.like}
                             onDelete={onDelete}
+                            onLike={onLike}
                         />
                     );
                 })}
