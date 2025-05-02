@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Tweet} from "./Tweet";
+import {TweetList} from "./TweetList";
 import TweetForm from "./TweetForm";
 type TweetType = {
     id:number;
@@ -35,19 +35,7 @@ export default function App() {
     return (
         <div>
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
-            <div className="tweet_contenaire">
-                {tweets.map((tweet) => (
-                    <Tweet
-                        key={tweet.id}
-                        id={tweet.id}
-                        name={tweet.name}
-                        content={tweet.content}
-                        like={tweet.like}
-                        onDelete={onDelete}
-                        onLike={onLike}
-                    />
-                ))}
-            </div>
+            <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
         </div>
     );
 }

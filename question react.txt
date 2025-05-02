@@ -1,1 +1,2 @@
 Pour quoi on ne doit jamais modifier directement le stata ?
+Pour quoi faut spleté les composent ?
