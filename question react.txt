@@ -1,2 +1,4 @@
-Pour quoi on ne doit jamais modifier directement le stata ?
-Pour quoi faut spleté les composent ?
+Pour quoi on ne doit jamais modifier directement le states ?
+Pour quoi faut splité les composent (nétoiyer rassemblé) ?
+A quoi sert le strict mode ?
+Comment on fait un post ver une API ?

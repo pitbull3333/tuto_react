@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import {TweetList} from "./TweetList";
 import TweetForm from "./TweetForm";
 type TweetType = {
@@ -14,7 +14,11 @@ const default_tweet:TweetType[] = [
     { id: 3, name: "Tutu", content: "Coucou !", like: 8 },
 ];
 export default function App() {
-    const [tweets, setTweets] = useState<TweetType[]>(default_tweet);
+    const [tweets,setTweets] = useState<TweetType[]>(default_tweet);
+    useEffect(() => {
+        const lastTweet = tweets[tweets.length - 1];
+        document.title = `Hello ${lastTweet.name}`;
+    },[tweets]);
     const handleSubmit = (newTweet:TweetType) => {
         setTweets([...tweets, newTweet]);
     };
