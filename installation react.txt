@@ -18,3 +18,34 @@ git clone https://github.com/ton-utilisateur/ton-depot.git
 cd tuto_react
 npm install
 npm start
+
+Installer dépendence pour faire un menu déroulant (bibliothèque CSS tailwind):
+
+npm install -D tailwindcss
+npx tailwindcss-cli@latest init (dans ton dossier projet)
+
+Créer un fichier postcss.config.js à la racine du projet
+postcss.config.js :
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+index.css :
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+tailwind.config.js :
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}", // prend tous tes fichiers React
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}

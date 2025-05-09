@@ -1,6 +1,7 @@
 import {useState,useEffect} from "react";
 import {TweetList} from "./TweetList";
 import TweetForm from "./TweetForm";
+import {Counter} from "./Counter";
 type TweetType = {
     id:number;
     name:string;
@@ -40,6 +41,7 @@ export default function App() {
         <div>
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
             <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
+            <Counter />
         </div>
     );
 }

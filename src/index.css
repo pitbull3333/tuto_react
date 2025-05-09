@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body{
     margin:0;
     background-color:#F6FD8D;
@@ -44,4 +47,11 @@ button{
     position:absolute;
     top:2px;
     right:2px;
+}
+.button_counter{
+    margin-left:10px;
+    margin-bottom:10px;
+}
+.affiche_counter{
+    margin-left:10px;
 }

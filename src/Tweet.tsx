@@ -6,7 +6,7 @@ type TweetProps = {
     onDelete:(id:number) => void;
     onLike:(id:number) => void;
 };
-    export function Tweet({id,name,content,like,onDelete,onLike}:TweetProps){
+export function Tweet({id,name,content,like,onDelete,onLike}:TweetProps){
     return(
         <div className="tweet">
             <div className="div_delete"><button onClick={() => onDelete(id)}>❌</button></div>
