@@ -2,7 +2,6 @@ Pour quoi Cultura à choisi de faire du CSR avec React pluto que du SSR avec Nod
 C'est quoi ISR ?
 Es ce que Cultura utilise des bibliothèque CSS comme tailwind avec React ?
 Es ce que Cultura utilise React Router (passer d’une “page” à une autre sans recharger le navigateur) ?
-Pour quoi on ne doit jamais modifier directement le states ?
 Pour quoi faut splité les composent (nétoiyer rassemblé) ?
 A quoi sert le strict mode ?
-Comment on fait un post ver une API ?
+C'est quoi la méthode delete avec fetch ?

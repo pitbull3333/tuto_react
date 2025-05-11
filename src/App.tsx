@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import {TweetList} from "./TweetList";
 import TweetForm from "./TweetForm";
 import {Counter} from "./Counter";
+import {Affichage} from "./TestGet";
 type TweetType = {
     id:number;
     name:string;
@@ -42,6 +43,7 @@ export default function App() {
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
             <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
             <Counter />
+            <Affichage url="http://127.0.0.1:800" />
         </div>
     );
 }
