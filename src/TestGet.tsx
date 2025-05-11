@@ -1,17 +1,17 @@
-import {useState,useEffect,useMemo} from "react";
+import {useState,useEffect} from "react";
 type UseTestGetType = {
-  url: string;
-  option?: RequestInit;
+  url:string,
+  //loading:boolean,
+  //data:string,
+  //error:boolean,
 };
-export function useTestGet(
-  { url, option = {} }: UseTestGetType
-): { loading: boolean; data: string | null; error: boolean } {
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<string | null>(null);
-  const [error, setError] = useState(false);
+export function useTestGet({url}:UseTestGetType){
+  const [loading,setLoading] = useState(false);
+  const [data,setData] = useState(null);
+  const [error,setError] = useState(false);
   useEffect(() => {
-  setLoading(true);
-  fetch(url, { ...option })
+    setLoading(true);
+    fetch(url,)
     .then(r => r.json())
     .then(data => {
       setData(data);
@@ -22,19 +22,12 @@ export function useTestGet(
       setError(true);
       setLoading(false);
     });
-}, [url, option]);
-  return { loading, data, error };
+  },[url]);
+  return {loading,data,error};
 }
-export function Affichage({ url }: { url: string }) {
-  const option = useMemo(() => ({
-    headers: {
-      Accept: "application/json"
-    }
-  }), []);
-
-  const { data, loading, error } = useTestGet({ url, option });
-
+export function Affichage({url}:UseTestGetType){
+  const {data} = useTestGet({url});
   return (
-    <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div>{JSON.stringify(data)}</div>
   );
 }
