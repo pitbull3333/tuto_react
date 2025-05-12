@@ -3,6 +3,7 @@ import {TweetList} from "./TweetList";
 import TweetForm from "./TweetForm";
 import {Counter} from "./Counter";
 import {Affichage} from "./TestGet";
+import {Menu} from "./Menu";
 type TweetType = {
     id:number;
     name:string;
@@ -40,6 +41,7 @@ export default function App() {
     const maxId = tweets.reduce((max, t) => (t.id > max ? t.id:max),0);
     return (
         <div>
+            <Menu />
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
             <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
             <Counter />
