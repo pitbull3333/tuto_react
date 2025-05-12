@@ -21,8 +21,8 @@ npm start
 
 Installer dépendence pour faire un menu déroulant (bibliothèque CSS tailwind):
 
-npm install -D tailwindcss
-npx tailwindcss-cli@latest init (dans ton dossier projet)
+npm install -D tailwindcss@3.4.1 postcss autoprefixer
+npx tailwindcss init -p
 
 Créer un fichier postcss.config.js à la racine du projet
 postcss.config.js :

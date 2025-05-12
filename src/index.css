@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+hr{
+    border-top: 1px solid black;
+}
 body{
     margin:0;
     background-color:#F6FD8D;
@@ -33,7 +36,7 @@ button{
     width:fit-content;
     height:fit-content;
     min-width:100px;
-    min-height:60px;
+    min-height:90px;
     border:2px solid black;
     padding:8px;
     background-color:#08eae7;
@@ -54,4 +57,13 @@ button{
 }
 .affiche_counter{
     margin-left:10px;
+}
+.button_3d{
+    @apply  px-5 py-2 bg-gradient-to-b from-blue-500 to-blue-700 text-white font-bold rounded-lg 
+            shadow-[0_4px_0_rgba(0,0,0,0.2)] border-b-4 border-blue-900
+            active:translate-y-[2px] active:shadow-[0_2px_0_rgba(0,0,0,0.2)] 
+            transition-all duration-150
+}
+.rotation{
+    @apply w-10 h-10 animate-spin-slow
 }

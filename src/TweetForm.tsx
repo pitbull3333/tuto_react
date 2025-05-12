@@ -28,7 +28,7 @@ export default function TweetForm({onSubmit,maxId}:Props){
       <form className="form_tweet_form" onSubmit={handleSubmit}>
         <input className="text_input" type="text" name="name" placeholder="name" />
         <input className="text_input" type="text" name="content" placeholder="message" />
-        <input type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer" />
+        <input type="submit" className="button_3d" value="Envoyer"/>
       </form>
     </div>
   );

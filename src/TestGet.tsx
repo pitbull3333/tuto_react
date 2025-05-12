@@ -1,13 +1,15 @@
 import {useState,useEffect} from "react";
 type UseTestGetType = {
   url:string,
-  //loading:boolean,
-  //data:string,
-  //error:boolean,
+};
+type UseData = {
+  name:string,
+  age:number,
+  taille:number,
 };
 export function useTestGet({url}:UseTestGetType){
   const [loading,setLoading] = useState(false);
-  const [data,setData] = useState(null);
+  const [data,setData] = useState<UseData[]>([]);
   const [error,setError] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -26,8 +28,20 @@ export function useTestGet({url}:UseTestGetType){
   return {loading,data,error};
 }
 export function Affichage({url}:UseTestGetType){
-  const {data} = useTestGet({url});
+  const {loading,data,error} = useTestGet({url});
   return (
-    <div>{JSON.stringify(data)}</div>
+    <div>
+      {error && <div className="text-red-600 font-bold">Erreur avec le serveur</div>}
+      {loading && <img className="rotation" src="/logo192.png" alt="Chargement..." />}
+      {/*!loading && !error && <div>{data[0]?.name}</div>*/}
+      {!loading && !error && (data.map((item,index) => (
+        <div key = {index}>
+          <div>Nom : {item.name}</div>
+          <div>Âge : {item.age}</div>
+          <div>Taille : {item.taille}</div>
+          <hr />
+        </div>
+      )))}
+    </div>
   );
 }
