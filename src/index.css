@@ -11,6 +11,11 @@ body{
 button{
     cursor:pointer;
 }
+.menu{
+    /*margin:auto;*/
+    display:flex;
+    justify-content:center;
+}
 .div_tweet_form{
     position:relative;
     margin-top:10px;
@@ -58,12 +63,18 @@ button{
 .affiche_counter{
     margin-left:10px;
 }
+.error{
+    margin-left:10px;
+    @apply text-red-600 font-bold
+}
 .button_3d{
+    cursor:pointer;
     @apply  px-5 py-2 bg-gradient-to-b from-blue-500 to-blue-700 text-white font-bold rounded-lg 
             shadow-[0_4px_0_rgba(0,0,0,0.2)] border-b-4 border-blue-900
             active:translate-y-[2px] active:shadow-[0_2px_0_rgba(0,0,0,0.2)] 
             transition-all duration-150
 }
 .rotation{
+    margin-left:10px;
     @apply w-10 h-10 animate-spin-slow
 }

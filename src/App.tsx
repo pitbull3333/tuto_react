@@ -41,7 +41,7 @@ export default function App() {
     const maxId = tweets.reduce((max, t) => (t.id > max ? t.id:max),0);
     return (
         <div>
-            <Menu />
+            <div className="menu"><Menu /></div>
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
             <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
             <Counter />

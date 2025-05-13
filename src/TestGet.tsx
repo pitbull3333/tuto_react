@@ -31,7 +31,7 @@ export function Affichage({url}:UseTestGetType){
   const {loading,data,error} = useTestGet({url});
   return (
     <div>
-      {error && <div className="text-red-600 font-bold">Erreur avec le serveur</div>}
+      {error && <div className="error">Erreur avec le serveur</div>}
       {loading && <img className="rotation" src="/logo192.png" alt="Chargement..." />}
       {/*!loading && !error && <div>{data[0]?.name}</div>*/}
       {!loading && !error && (data.map((item,index) => (
