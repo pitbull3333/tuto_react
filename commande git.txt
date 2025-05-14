@@ -30,6 +30,11 @@ Lier un dépot :
 git remote add origin https://github.com/pitbull3333/tuto_react.git
 git branch -M main
 
+nétoiyer le depot local :
+git reset --hard origin/main
+git clean -fd
+git pull origin main
+
 créer une branche :
 git branch dev
 

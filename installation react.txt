@@ -49,3 +49,6 @@ module.exports = {
   },
   plugins: [],
 }
+
+Installation React router :
+npm install react-router-dom
