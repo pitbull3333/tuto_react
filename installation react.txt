@@ -60,5 +60,5 @@ prod : npm run build
 Déploiment sur GitHub :
 npm install --save gh-pages
 "homepage": "https://pitbull3333.github.io/tuto_react", en haut dans package.json
-
+<BrowserRouter basename={process.env.PUBLIC_URL}> dans app.tsx
 npm run deploy
