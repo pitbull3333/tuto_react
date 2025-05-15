@@ -29,7 +29,6 @@ export function useTestGet({url}:UseTestGetType){
 }
 export function Affichage({url}:UseTestGetType){
   const {loading,data,error} = useTestGet({url});
-  console.log("URL logo :", `${process.env.PUBLIC_URL}/logo192.png`);
   return (
     <div>
       {error && <div className="error">Erreur avec le serveur</div>}
