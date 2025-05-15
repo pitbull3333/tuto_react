@@ -32,7 +32,7 @@ export function Affichage({url}:UseTestGetType){
   return (
     <div>
       {error && <div className="error">Erreur avec le serveur</div>}
-      {loading && <img className="rotation" src="/logo192.png" alt="Chargement..." />}
+      {loading && <img className="rotation" src={`${process.env.PUBLIC_URL}/logo192.png`} alt="Chargement..." />}
       {/*!loading && !error && <div>{data[0]?.name}</div>*/}
       {!loading && !error && (data.map((item,index) => (
         <div key = {index}>
