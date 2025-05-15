@@ -61,4 +61,6 @@ Déploiment sur GitHub :
 npm install --save gh-pages
 "homepage": "https://pitbull3333.github.io/tuto_react", en haut dans package.json
 <BrowserRouter basename={process.env.PUBLIC_URL}> dans app.tsx
+Ou
+import { HashRouter as Router, Routes, Route } from "react-router-dom"; dans app.tsx
 npm run deploy
