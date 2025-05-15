@@ -3,7 +3,7 @@ import Profil from './Profil';
 import Accueil from './Accueil';
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/profil" element={<Profil />} />

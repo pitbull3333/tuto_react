@@ -56,3 +56,9 @@ npm install react-router-dom
 Lancement React :
 dev : npm start
 prod : npm run build
+
+Déploiment sur GitHub :
+npm install --save gh-pages
+"homepage": "https://pitbull3333.github.io/tuto_react", en haut dans package.json
+
+npm run deploy
