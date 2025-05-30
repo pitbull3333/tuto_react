@@ -28,6 +28,22 @@ button{
 }
 .text_input{
     margin-bottom:10px;
+    @apply
+        mb-3
+        w-full
+        rounded-xl
+        border
+        border-gray-300
+        bg-white
+        px-4
+        py-0.5
+        text-gray-800
+        shadow-sm
+        outline-none
+        focus:border-blue-500
+        focus:ring-2
+        focus:ring-blue-300
+        transition;
 }
 .tweet_contenaire{
     display:flex;

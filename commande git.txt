@@ -27,13 +27,20 @@ Identification :
 git config --global user.name "Xavier" && git config --global user.email "xdupondpoubelle@example.com"
 
 Lier un dépot :
-git remote add origin https://github.com/pitbull3333/tuto_react.git
-git branch -M main
+git init
+git remote add origin https://github.com/pitbull3333/le_combat_des_heros.git
+git branch -M main (renome la branch courente en main)
 
 nétoiyer le depot local :
 git reset --hard origin/main
 git clean -fd
 git pull origin main
+
+liste des branch du dépot :
+git branch
+
+Ce positioné sur une branche :
+git checkout nom_de_branche
 
 créer une branche :
 git branch dev
