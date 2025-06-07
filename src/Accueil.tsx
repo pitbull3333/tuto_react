@@ -46,7 +46,8 @@ export default function Accueil() {
             <TweetForm onSubmit={handleSubmit} maxId = {maxId} />
             <TweetList tweets={tweets} onDelete={onDelete} onLike={onLike} />
             <Counter />
-            <Affichage url={process.env.REACT_APP_API_URL || ""} />
+            {/*<Affichage url={process.env.REACT_APP_API_URL || ""} />*/}
+            <Affichage url={"http://127.0.0.1:800/dev"} />
         </div>
     );
 }

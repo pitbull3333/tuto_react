@@ -1,4 +1,5 @@
 import {useState,useEffect} from "react";
+import axios, { AxiosError } from "axios";
 type UseTestGetType = {
   url:string,
 };
@@ -8,30 +9,37 @@ type UseData = {
   taille:number,
 };
 export function useTestGet({url}:UseTestGetType){
-  const [loading,setLoading] = useState(false);
+  const [loading,setLoading] = useState(true);
   const [data,setData] = useState<UseData[]>([]);
-  const [error,setError] = useState(false);
+  const [error,setError] = useState<any>(null);
   useEffect(() => {
-    setLoading(true);
-    fetch(url,)
-    .then(r => r.json())
-    .then(data => {
-      setData(data);
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error(err);
-      setError(true);
-      setLoading(false);
-    });
-  },[url]);
+    axios
+    .get(url)
+    .then((res) => setData(res.data))
+    .catch((err) => handleError(err,setError))
+    //.catch((err) => console.log(err))
+    .finally(() => setLoading(false))
+  },[]);
   return {loading,data,error};
+}
+const handleError = (error:AxiosError,setError:(message:string) => void) => {
+  let message;
+  const code = error.code;
+  switch(code){
+    case "ERR_NETWORK":
+      message = "clé de traduction";
+    break;
+    default:
+      message = "Erreur serveur"
+  }
+  setError(message);
 }
 export function Affichage({url}:UseTestGetType){
   const {loading,data,error} = useTestGet({url});
+  console.log(error);
   return (
     <div>
-      {error && <div className="error">Erreur avec le serveur</div>}
+      {error && <div className="error">{error}</div>}
       {loading && <img className="rotation" src={`${process.env.PUBLIC_URL}/logo192.png`} alt="Chargement..." />}
       {/*!loading && !error && <div>{data[0]?.name}</div>*/}
       {!loading && !error && (data.map((item,index) => (

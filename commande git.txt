@@ -45,6 +45,12 @@ git checkout nom_de_branche
 créer une branche :
 git branch dev
 
+supprimer une branch :
+git branch -d ls (ou D pour focé)
+
+voir la structuration des branch :
+git reflog show premierprojet
+
 Se possitioné sur une branche :
 git checkout main
 

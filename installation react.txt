@@ -4,6 +4,9 @@ yarn --version
 installation de nouveau projet React avec npm :
 npx create-react-app mon-projet --template typescript
 
+installation de nouveau projet React avec vite :
+npm create vite@latest my-app --template react
+
 installation de nouveau projet React avec yarn :
 yarn create react-app mon-projet --template typescript
 
