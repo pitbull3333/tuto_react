@@ -1,3 +1,4 @@
+import TextField from '@mui/material/TextField';
 type TweetType = {
     id: number;
     name: string;
@@ -26,7 +27,8 @@ export default function TweetForm({onSubmit,maxId}:Props){
   return (
     <div className="div_tweet_form">
       <form className="form_tweet_form" onSubmit={handleSubmit}>
-        <input className="text_input" type="text" name="name" placeholder="name" />
+        {/*<input className="text_input" type="text" name="name" placeholder="name" />*/}
+        <TextField id="outlined-basic" label="name" variant="outlined" />
         <input className="text_input" type="text" name="content" placeholder="message" />
         <input type="submit" className="button_3d" value="Envoyer"/>
       </form>
